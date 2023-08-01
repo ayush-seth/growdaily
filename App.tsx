@@ -26,6 +26,7 @@ export default function App() {
           headerStyle: { backgroundColor: colors.black },
           contentStyle: {
             backgroundColor: colors.black,
+            paddingHorizontal: 32,
           },
         }}
       >
