@@ -11,7 +11,7 @@ import {
 import { colors } from "../../constants/style";
 
 type Props = {
-  style: StyleProp<ViewStyle>;
+  style?: StyleProp<ViewStyle>;
   onPress?: (event: GestureResponderEvent) => void;
   children: ReactNode;
 };
