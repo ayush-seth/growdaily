@@ -1,5 +1,4 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import React from "react";
 import { Image, StyleSheet, View } from "react-native";
 import { StackParamList } from "../App";
 import Button from "../components/ui/Button";
