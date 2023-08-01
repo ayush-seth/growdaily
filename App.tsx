@@ -1,6 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StyleSheet } from "react-native";
+import { colors } from "./constants/style";
 import EnterDetailsScreen from "./screens/EnterDetailsScreen";
 import IntroductionScreen from "./screens/IntroductionScreen";
 import OTPVerificationScreen from "./screens/OTPVerificationScreen";
@@ -21,10 +22,10 @@ export default function App() {
       <Stack.Navigator
         screenOptions={{
           headerBackTitleVisible: false,
-          headerTintColor: "white",
-          headerStyle: { backgroundColor: "#090B0C" },
+          headerTintColor: colors.white,
+          headerStyle: { backgroundColor: colors.black },
           contentStyle: {
-            backgroundColor: "#090B0C",
+            backgroundColor: colors.black,
           },
         }}
       >
@@ -53,11 +54,4 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+const styles = StyleSheet.create({});
