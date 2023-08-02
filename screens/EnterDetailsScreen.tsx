@@ -18,7 +18,7 @@ const EnterDetailsScreen = ({ navigation }: Props) => {
       </View>
       <Button
         style={styles.button}
-        onPress={() => navigation.navigate("HomeScreen")}
+        onPress={() => navigation.navigate("MainTabs")}
       >
         Proceed
       </Button>
@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "space-between",
+    paddingHorizontal: 32,
   },
   headingContainer: {
     marginTop: 40,

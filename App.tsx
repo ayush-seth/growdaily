@@ -1,3 +1,4 @@
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StyleSheet } from "react-native";
@@ -5,7 +6,10 @@ import { colors } from "./constants/style";
 import EnterDetailsScreen from "./screens/EnterDetailsScreen";
 import HomeScreen from "./screens/HomeScreen";
 import IntroductionScreen from "./screens/IntroductionScreen";
+import NewsScreen from "./screens/NewsScreen";
 import OTPVerificationScreen from "./screens/OTPVerificationScreen";
+import ProfileScreen from "./screens/ProfileScreen";
+import QuantifyScreen from "./screens/QuantifyScreen";
 import VerifyNumberScreen from "./screens/VerifyNumberScreen";
 
 export type StackParamList = {
@@ -13,10 +17,38 @@ export type StackParamList = {
   VerifyNumberScreen: undefined;
   OTPVerificationScreen: undefined;
   EnterDetailsScreen: undefined;
-  HomeScreen: undefined;
+  MainTabs: undefined;
 };
 
 const Stack = createNativeStackNavigator<StackParamList>();
+const Tab = createBottomTabNavigator();
+
+function Tabs() {
+  return (
+    <Tab.Navigator
+      screenOptions={{
+        headerShown: false,
+        tabBarStyle: {
+          backgroundColor: "#1D1E20",
+          borderTopWidth: 0,
+          height: 84,
+        },
+        tabBarLabelStyle: { fontSize: 12 },
+        tabBarActiveTintColor: colors.primary[500],
+        tabBarInactiveTintColor: colors.white,
+      }}
+      sceneContainerStyle={{
+        backgroundColor: colors.black,
+        paddingHorizontal: 32,
+      }}
+    >
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Quantify" component={QuantifyScreen} />
+      <Tab.Screen name="News" component={NewsScreen} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
+    </Tab.Navigator>
+  );
+}
 
 export default function App() {
   return (
@@ -28,7 +60,6 @@ export default function App() {
           headerStyle: { backgroundColor: colors.black },
           contentStyle: {
             backgroundColor: colors.black,
-            paddingHorizontal: 32,
           },
         }}
       >
@@ -53,8 +84,8 @@ export default function App() {
           options={{ title: "Enter details" }}
         />
         <Stack.Screen
-          name="HomeScreen"
-          component={HomeScreen}
+          name="MainTabs"
+          component={Tabs}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

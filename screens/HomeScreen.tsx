@@ -1,12 +1,18 @@
-import { SafeAreaView, StyleSheet, Text } from "react-native";
-import { colors } from "../constants/style";
+import { Image, SafeAreaView, StyleSheet, View } from "react-native";
+import Title from "../components/ui/Title";
 
 type Props = {};
 
 const HomeScreen = (props: Props) => {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.text}>Welcome to the HomeScreen</Text>
+      <Title>Hey, Jon!</Title>
+      <View style={styles.imageContainer}>
+        <Image
+          source={require("../assets/images/bitcoin-stock.png")}
+          style={styles.image}
+        />
+      </View>
     </SafeAreaView>
   );
 };
@@ -16,11 +22,14 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
   },
-  text: {
-    color: colors.white,
-    fontSize: 24,
+  imageContainer: {
+    aspectRatio: "2 / 1",
+  },
+  image: {
+    marginTop: 22,
+    width: "100%",
+    height: "100%",
+    objectFit: "contain",
   },
 });
