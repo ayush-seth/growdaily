@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StyleSheet } from "react-native";
 import { colors } from "./constants/style";
 import EnterDetailsScreen from "./screens/EnterDetailsScreen";
+import HomeScreen from "./screens/HomeScreen";
 import IntroductionScreen from "./screens/IntroductionScreen";
 import OTPVerificationScreen from "./screens/OTPVerificationScreen";
 import VerifyNumberScreen from "./screens/VerifyNumberScreen";
@@ -12,6 +13,7 @@ export type StackParamList = {
   VerifyNumberScreen: undefined;
   OTPVerificationScreen: undefined;
   EnterDetailsScreen: undefined;
+  HomeScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator<StackParamList>();
@@ -49,6 +51,11 @@ export default function App() {
           name="EnterDetailsScreen"
           component={EnterDetailsScreen}
           options={{ title: "Enter details" }}
+        />
+        <Stack.Screen
+          name="HomeScreen"
+          component={HomeScreen}
+          options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>
