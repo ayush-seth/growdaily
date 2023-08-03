@@ -1,3 +1,4 @@
+import { Feather } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -31,9 +32,11 @@ function Tabs() {
         tabBarStyle: {
           backgroundColor: "#1D1E20",
           borderTopWidth: 0,
-          height: 84,
+          borderTopLeftRadius: 8,
+          borderTopRightRadius: 8,
+          height: 100,
         },
-        tabBarLabelStyle: { fontSize: 12 },
+        tabBarLabelStyle: { fontSize: 12, marginTop: -10 },
         tabBarActiveTintColor: colors.primary[500],
         tabBarInactiveTintColor: colors.white,
       }}
@@ -42,10 +45,42 @@ function Tabs() {
         paddingHorizontal: 24,
       }}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Quantify" component={QuantifyScreen} />
-      <Tab.Screen name="News" component={NewsScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Feather name="home" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Quantify"
+        component={QuantifyScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Feather name="bar-chart" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="News"
+        component={NewsScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Feather name="globe" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Feather name="user" size={size} color={color} />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 }
