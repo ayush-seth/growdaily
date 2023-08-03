@@ -39,7 +39,7 @@ function Tabs() {
       }}
       sceneContainerStyle={{
         backgroundColor: colors.black,
-        paddingHorizontal: 32,
+        paddingHorizontal: 24,
       }}
     >
       <Tab.Screen name="Home" component={HomeScreen} />
