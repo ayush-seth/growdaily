@@ -1,4 +1,6 @@
 import { Image, SafeAreaView, StyleSheet, View } from "react-native";
+import StockActionsCard from "../components/home/StockActionsCard";
+import StocksCard from "../components/home/StocksCard";
 import Title from "../components/ui/Title";
 
 type Props = {};
@@ -6,13 +8,18 @@ type Props = {};
 const HomeScreen = (props: Props) => {
   return (
     <SafeAreaView style={styles.container}>
-      <Title>Hey, Jon!</Title>
+      <Title textStyle={{ fontWeight: "bold" }}>Hey, Jon!</Title>
       <View style={styles.imageContainer}>
         <Image
           source={require("../assets/images/bitcoin-stock.png")}
           style={styles.image}
         />
       </View>
+      <Title textStyle={{ fontSize: 20, marginTop: 40, marginBottom: 8 }}>
+        Ideal for getting started
+      </Title>
+      <StocksCard />
+      <StockActionsCard />
     </SafeAreaView>
   );
 };
@@ -27,7 +34,6 @@ const styles = StyleSheet.create({
     aspectRatio: "2 / 1",
   },
   image: {
-    marginTop: 22,
     width: "100%",
     height: "100%",
     objectFit: "contain",
