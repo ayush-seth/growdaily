@@ -18,11 +18,11 @@ type Props = {
 
 const Button = ({ style, onPress, children }: Props) => {
   return (
-    <View style={[styles.container, style]}>
-      <Pressable onPress={onPress}>
+    <Pressable onPress={onPress}>
+      <View style={[styles.container, style]}>
         <Text style={styles.text}>{children}</Text>
-      </Pressable>
-    </View>
+      </View>
+    </Pressable>
   );
 };
 
